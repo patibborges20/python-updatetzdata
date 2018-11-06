@@ -1,6 +1,9 @@
 import sys, os, string
 import paramiko
+import rollbar
 
+rollbar.init('643818e27fb5471ca568be0b3f6ba5af')
+rollbar.report_message('Rollbar is configured correctly')
 update = "yum update -y tzdata"
 check = "zdump -v /usr/share/zoneinfo/America/Sao_Paulo | grep 2018"
 servers = ['192.168.1.1','192.168.1.2','187.52.5.3']
